@@ -1,0 +1,4 @@
+*.o
+hugepage-mmap
+hugepage-shm
+map_hugetlb
