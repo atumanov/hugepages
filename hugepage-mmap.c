@@ -22,7 +22,9 @@
 #include <sys/mman.h>
 #include <fcntl.h>
 
-#define FILE_NAME "huge/hugepagefile"
+#define DEVFILE_NAME "/dev/hugepages/hugepagefile"
+#define MNTFILE_NAME "/mnt/hugepages/hugepagefile"
+#define FILE_NAME DEVFILE_NAME
 #define LENGTH (256UL*1024*1024)
 #define PROTECTION (PROT_READ | PROT_WRITE)
 
@@ -83,6 +85,10 @@ int main(void)
     check_bytes(addr);
     write_bytes(addr);
     ret = read_bytes(addr);
+
+    int seconds = 10;
+    printf("sleeping for %d seconds \n", seconds);
+    sleep(seconds);
 
     munmap(addr, LENGTH);
     close(fd);

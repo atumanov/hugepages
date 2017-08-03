@@ -38,7 +38,7 @@
 #define SHM_HUGETLB 04000
 #endif
 
-#define LENGTH (256UL*1024*1024)
+#define LENGTH (3UL*1024*1024*1024)
 
 #define dprintf(x)  printf(x)
 
